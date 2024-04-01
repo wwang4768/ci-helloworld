@@ -45,4 +45,22 @@ public class ArrayUtilsTest {
     public void testOddOrPositiveBothPositivesAndNegatives() {
         assertEquals(3, ArrayUtils.oddOrPos(new int[]{-3, -2, 0, 1, 4}));
     }
+
+    @Test
+    public void testCountOf() {
+        // Test case 1: Array with one element equal to target
+        assertEquals(1, ArrayUtils.countOf(new int[]{5}, 5));
+
+        // Test case 2: Array with multiple elements, including duplicates
+        assertEquals(3, ArrayUtils.countOf(new int[]{5, 5, 3, 5}, 5));
+
+        // Test case 3: Array with no elements equal to target
+        assertEquals(0, ArrayUtils.countOf(new int[]{1, 2, 3}, 5));
+
+        // Test case 4: Array with all elements equal to target
+        assertEquals(3, ArrayUtils.countOf(new int[]{7, 7, 7}, 7));
+
+        // Test case 5: Empty array
+        assertEquals(0, ArrayUtils.countOf(new int[]{}, 5));
+    }
 }
